@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Consultas</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding>
+<h2>Bienvenidos</h2>
+    <h2>Lista de Consultas</h2>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of todo">
+      <ion-item>
+        <h2>Consulta: {{ item.consulta }}</h2>
+        <p>Doctor: {{ item.doctor}}</p>
+        <p>Precio: ${{ item.precio}}</p>
+        <p>Hora: {{ item.hora}}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="deleteItem(item)">
+            <ion-icon name="md-trash"></ion-icon>
+            Eliminar
+          </button>
+        </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+
+
+    <ion-fab right bottom>
+      <button ion-fab color="danger" (click)="newItem()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-fab>
+
+  </ion-content>
